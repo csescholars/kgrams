@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bead Binary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    .box {
+      background-color: #00A8D9;
+      color: #FFFFFF;
+      width: 90px;
+      height: 90px;
+      -webkit-border-radius: 90px;
+      -moz-border-radius: 90px;
+      border-radius: 90px;
+      line-height: 90px;
+      text-align: center;
+      margin: 3px 3px 3px 0; 
+      padding: 1px; 
+      float: left;
+      font-size: 4em;
+      cursor: pointer;
+    }
+
+    #sortable { list-style-type: none; margin: 0; padding: 0; width: 960px; }
+
+    #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+    #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+
+
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <!-- ALL
+    ===================================================== -->
+    <div class='all'>
+
+      <!-- NAVBAR
+      ================================================== -->
+      <div class='navbar'>
+        <div class='header'>
+          <div class='image'>
+            <img src="images/CSEScholarsLogo.png">
+          </div>
+          <div class='title'>
+            <h1>
+              Bead Binary
+            </h1>
+          </div>
+        </div>
+        <div class='tabs'>
+          Convert your initials to the computer language.
+        </div>
+      </div>
+
+      <div class='container'>
+        
+        <ul id="sortable">
+          <li class="box">A</li>
+          <li class="box">B</li>
+          <li class="box">C</li>
+          <li class="box">D</li>
+          <li class="box">E</li>
+          <li class="box">F</li>
+          <li class="box">G</li>
+          <li class="box">H</li>
+          <li class="box">I</li>
+          <li class="box">J</li>
+          <li class="box">K</li>
+          <li class="box">L</li>
+          <li class="box">M</li>
+          <li class="box">N</li>
+          <li class="box">O</li>
+          <li class="box">P</li>
+          <li class="box">Q</li>
+          <li class="box">R</li>
+          <li class="box">S</li>
+          <li class="box">T</li>
+          <li class="box">U</li>
+          <li class="box">V</li>
+          <li class="box">W</li>
+          <li class="box">X</li>
+          <li class="box">Y</li>
+          <li class="box">Z</li>
+        </ul>
+
+        <br />
+        <br />
+
+        <div id="droppable" class="ui-widget-header">
+          <p>accept: '#draggable'</p>
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <p>&copy; 2013 CSE Scholars </p>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        $( "#sortable li").draggable({
+            helper: "clone"
+        });
+        $( "#droppable" ).droppable({
+          activeClass: "ui-state-default",
+          hoverClass: "ui-state-hover",
+          drop: function( event, ui ) {
+            $( this ).find("p").html("Got: " + ui.draggable.text());
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/*
+Created by Jeff Sallans (jeffsallans@gmail.com)
+4-2-2012
+PURPOSE: nav style
+*/
+
+/*
+Colors according to Kulor test
+http://kuler.adobe.com/#themeID/1968810
+Light Slate Gray
+#CCDDEE
+Light Background
+#F0F0FF
+Slate
+#37414F
+White
+#FFFFFF
+*/
+
+/* CSS Document */
+.navbar {
+
+	width: 1000px;
+	margin: 0px;
+}
+
+.header {
+
+	height: 80px;
+	padding-bottom: 10px;
+
+	background-color: #222222;
+
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #666666 0%, #222222 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #666666 0%, #222222 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #666666 0%, #222222 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666666), color-stop(1, #222222));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #666666 0%, #222222 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #666666 0%, #222222 100%);	color: #FFFFFF;
+}
+
+.header .image {
+
+	padding: 5px;
+	display: inline-block;
+	float: left;
+}
+
+.header img {
+	height: 80px;
+	margin-left: 20px;
+}
+
+.header .title h1 {
+
+	display: relative;
+	padding-left: 260px;
+	line-height: 90px;
+}
+
+.header .title_description {
+
+	display: inline-block;
+	font-size: 11px;
+	padding-left: 350px;
+}
+
+.tabs {
+	background-color: #00A8D9;
+	height: 50px;
+	position: relative;
+	color: #FFFFFF;
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.selected {
+	background-color: #222222;
+}
+
+.navbar a {
+	text-decoration: none;
+}
+
+.tab_item {
+	display: block;
+	float: left;
+	padding: 15px;
+	width: 80px;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-align: center;
+	z-index: 200;
+	position: relative;
+	cursor: pointer;
+}
+
+.tab_item:hover {
+	color: #DDDDDD;
+}
+
+.tab_item_right {
+
+	display: block;
+	float: right;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-align: center;
+	z-index: 200;
+	position: relative;
+}

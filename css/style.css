@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/*
+Created by Jeff Sallans (jeffsallans@gmail.com)
+4-2-2012
+PURPOSE: general style
+*/
+
+/* CSS Document */
+body {
+
+	background-color: #EEEEEE;
+	font-family: "Segoe UI","Helvetica",Garuda,Arial,sans-serif;
+	font-size: 14px;
+    padding-bottom: 40px;
+}
+
+.all {
+
+	box-shadow: 0 0 85px rgba(0, 0, 0, 0.3);
+	background-color: #FFFFFF;
+
+	width: 1000px;
+	top: 50px;
+
+	/*centers the div*/
+	margin: 0px auto;
+}
+
+.all .container {
+
+	padding: 20px;
+}
+
+footer {
+
+	padding: 10px;
+}
