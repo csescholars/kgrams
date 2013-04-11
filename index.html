@@ -22,25 +22,51 @@
     .box {
       background-color: #00A8D9;
       color: #FFFFFF;
-      width: 90px;
-      height: 90px;
-      -webkit-border-radius: 90px;
-      -moz-border-radius: 90px;
-      border-radius: 90px;
-      line-height: 90px;
+      width: 70px;
+      height: 70px;
+      -webkit-border-radius: 70px;
+      -moz-border-radius: 70px;
+      border-radius: 70px;
+      line-height: 70px;
       text-align: center;
-      margin: 3px 3px 3px 0; 
+      margin: 5px 5px 5px 0; 
       padding: 1px; 
       float: left;
-      font-size: 4em;
+      font-size: 3.5em;
       cursor: pointer;
     }
 
-    #sortable { list-style-type: none; margin: 0; padding: 0; width: 960px; }
+    .table_title {
+      height: 3em;
+      font-size: 2.2em;
+      text-align: center;
+      color: #222222;
+    }
 
-    #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
-    #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+    #sortable { list-style-type: none; margin: 0; padding: 0; width: 600px; }
 
+    .droppable { 
+      color: #FFFFFF;
+
+      width: 100px; 
+      height: 100px;
+      line-height: 100px; 
+      
+      padding: 0.5em; 
+      float: left; 
+      margin: 10px;
+      
+      font-size: 3.5em; 
+      text-align: center;
+    }
+
+    .default {
+      background-color: #222222;
+    }
+
+    .hover {
+      background-color: #777777;
+    }
 
     </style>
 
@@ -77,41 +103,56 @@
 
       <div class='container'>
         
-        <ul id="sortable">
-          <li class="box">A</li>
-          <li class="box">B</li>
-          <li class="box">C</li>
-          <li class="box">D</li>
-          <li class="box">E</li>
-          <li class="box">F</li>
-          <li class="box">G</li>
-          <li class="box">H</li>
-          <li class="box">I</li>
-          <li class="box">J</li>
-          <li class="box">K</li>
-          <li class="box">L</li>
-          <li class="box">M</li>
-          <li class="box">N</li>
-          <li class="box">O</li>
-          <li class="box">P</li>
-          <li class="box">Q</li>
-          <li class="box">R</li>
-          <li class="box">S</li>
-          <li class="box">T</li>
-          <li class="box">U</li>
-          <li class="box">V</li>
-          <li class="box">W</li>
-          <li class="box">X</li>
-          <li class="box">Y</li>
-          <li class="box">Z</li>
-        </ul>
-
-        <br />
-        <br />
-
-        <div id="droppable" class="ui-widget-header">
-          <p>accept: '#draggable'</p>
-        </div>
+        <table>
+          <tr class="table_title">
+            <td>
+              Step 1: Drag letters to boxes
+            </td>
+            <td>
+              Step 2: Press Compute
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ul id="sortable">
+                <li class="box">A</li>
+                <li class="box">B</li>
+                <li class="box">C</li>
+                <li class="box">D</li>
+                <li class="box">E</li>
+                <li class="box">F</li>
+                <li class="box">G</li>
+                <li class="box">H</li>
+                <li class="box">I</li>
+                <li class="box">J</li>
+                <li class="box">K</li>
+                <li class="box">L</li>
+                <li class="box">M</li>
+                <li class="box">N</li>
+                <li class="box">O</li>
+                <li class="box">P</li>
+                <li class="box">Q</li>
+                <li class="box">R</li>
+                <li class="box">S</li>
+                <li class="box">T</li>
+                <li class="box">U</li>
+                <li class="box">V</li>
+                <li class="box">W</li>
+                <li class="box">X</li>
+                <li class="box">Y</li>
+                <li class="box">Z</li>
+              </ul>
+            </td>
+            <td>
+              <div class="droppable default">
+                <p>Drag Here</p>
+              </div>
+              <div class="droppable default">
+                <p>Drag Here</p>
+              </div>
+            </td>
+          </tr>
+        </table>
 
       </div>
 
@@ -133,11 +174,10 @@
         $( "#sortable li").draggable({
             helper: "clone"
         });
-        $( "#droppable" ).droppable({
-          activeClass: "ui-state-default",
-          hoverClass: "ui-state-hover",
+        $( ".droppable" ).droppable({
+          hoverClass: "hover",
           drop: function( event, ui ) {
-            $( this ).find("p").html("Got: " + ui.draggable.text());
+            $( this ).find("p").html(ui.draggable.text());
           }
         });
       });
