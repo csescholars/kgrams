@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bead Binary</title>
+    <title>Binary Bracelets</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -68,6 +68,11 @@
       background-color: #777777;
     }
 
+    .result_text {
+      font-size: 2.2em;
+      color: #222222;
+    }
+
     </style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -92,7 +97,7 @@
           </div>
           <div class='title'>
             <h1>
-              Bead Binary
+              Binary Bracelets
             </h1>
           </div>
         </div>
@@ -109,11 +114,11 @@
               Step 1: Drag letters to boxes
             </td>
             <td>
-              Step 2: Press Compute
+              Step 2: Use Bead Code
             </td>
           </tr>
           <tr>
-            <td>
+            <td rowspan="2">
               <ul id="sortable">
                 <li class="box">A</li>
                 <li class="box">B</li>
@@ -144,14 +149,20 @@
               </ul>
             </td>
             <td>
-              <div class="droppable default">
-                <p>Drag Here</p>
-              </div>
-              <div class="droppable default">
-                <p>Drag Here</p>
+              <div class="droppable default item1">C</div>
+              <div class="droppable default item2">S</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="result_text">
+                Bead Code:
+                <span class="result">
+                </span>
               </div>
             </td>
           </tr>
+
         </table>
 
       </div>
@@ -177,10 +188,72 @@
         $( ".droppable" ).droppable({
           hoverClass: "hover",
           drop: function( event, ui ) {
-            $( this ).find("p").html(ui.draggable.text());
+            $( this ).html(ui.draggable.text());
+            
+            //show result
+            $(".result").hide();
+            var result = letter_to_binary($('.item1').html()) + letter_to_binary($(".item2").html());
+            $(".result").html(result);
+            $(".result").show("Blind");
           }
         });
       });
+
+      function letter_to_binary(letter) {
+
+        if (letter == 'A')
+          return "00001";
+        if (letter == 'B')
+          return "00010";
+        if (letter == 'C')
+          return "00011";
+        if (letter == 'D')
+          return "00100";
+        if (letter == 'E')
+          return "00101";
+        if (letter == 'F')
+          return "00110";
+        if (letter == 'G')
+          return "00111";
+        if (letter == 'H')
+          return "01000";
+        if (letter == 'I')
+          return "01001";
+        if (letter == 'J')
+          return "01010";
+        if (letter == 'K')
+          return "01011";
+        if (letter == 'L')
+          return "01100";
+        if (letter == 'M')
+          return "01101";
+        if (letter == 'N')
+          return "01110";
+        if (letter == 'O')
+          return "01111";
+        if (letter == 'P')
+          return "10000";
+        if (letter == 'Q')
+          return "10001";
+        if (letter == 'R')
+          return "10010";
+        if (letter == 'S')
+          return "10011";
+        if (letter == 'T')
+          return "10100";
+        if (letter == 'U')
+          return "10101";
+        if (letter == 'V')
+          return "10110";
+        if (letter == 'W')
+          return "10111";
+        if (letter == 'X')
+          return "11000";
+        if (letter == 'Y')
+          return "11001";
+        if (letter == 'Z')
+          return "11010";
+      }
     </script>
   </body>
 </html>
