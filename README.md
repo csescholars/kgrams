@@ -2,7 +2,7 @@
 
 Single webpage for kids to convert their initials to binary.  For the KGrams UofM event.
 
-## (Demo)[http://csescholars.github.io/kgrams/]
+## [Demo](http://csescholars.github.io/kgrams/)
 
 
 ## Technology
@@ -18,4 +18,4 @@ Single webpage for kids to convert their initials to binary.  For the KGrams Uof
 
 1) Pull this repository
 
-2) Start up a webserver on the root directory (my favorite way)[https://www.npmjs.com/package/http-server]
+2) Start up a webserver on the root directory [my favorite way](https://www.npmjs.com/package/http-server)
